@@ -1,0 +1,15 @@
+public class Question1 {
+    public static void main(String[] args) {
+        //Declare Variables
+        String name = "J Smith";
+        int age = 25;
+        double salary = 21000;
+        boolean isEmployed = true;
+
+
+        //Print statement
+        System.out.println(name + " is " + age + " years old, is currently " + (isEmployed ? "employed" : "unemployed")
+                + " and has a salary of £" + salary + " per year");
+    }
+
+}
