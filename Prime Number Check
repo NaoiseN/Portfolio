@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Question2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //Obtain user input
+        System.out.print("Enter a positive integer: ");
+        int num = scanner.nextInt();
+
+        //IF is prime print statement Else is not prime print statement
+        if (isPrime(num)) {
+            System.out.println(num + " is a prime number");
+        } else {
+            System.out.println(num + " is not a prime number");
+        }
+        //close scanner
+        scanner.close();
+    }
+
+    //Prime number checker method
+    private static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+
+        if (num == 2) {
+            return false;
+        }
+
+        //Check divisibility up to square root of int num
+        for (int i = 3; i < Math.sqrt(num); i += 2) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
