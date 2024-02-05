@@ -1,0 +1,29 @@
+public class Question4 {
+    public static void main(String[] args) {
+        //Print the numbers 1 to 10 using while loop
+        int i = 1;
+
+        while (i <= 10) {
+            System.out.print(i + " ");
+            i++;
+        }
+
+        //Print new line
+        System.out.println();
+
+        //Print numbers 1 to 10 using for loop
+        for (int j = 1; j <= 10; j++) {
+            System.out.print(j + " ");
+        }
+
+        //Print new line
+        System.out.println();
+
+        //Iterating array with for-each loop
+        String[] fruits = {"Apple", "Banana", "Orange", "Grapes"};
+
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+    }
+}
