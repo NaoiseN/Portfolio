@@ -1,37 +1,42 @@
 import java.util.Scanner;
-public class Question5 {
+public class Question6 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        //Get string from scanning user input
-        System.out.print("Enter a Word: ");
-        String input = scanner.nextLine();
+        //Print Menu
+        System.out.println("Volume Calculator");
+        System.out.println("1. Calculate the volume of a sphere");
+        System.out.println("2. Calculate the volume of a cylinder");
+        System.out.print("Enter choice: ");
+        int choice = scanner.nextInt();
 
-        //IF ELSE string is palindrome, print results
-
-        if (isPalindrome(input.toLowerCase())) {
-            System.out.println(input + "is a palindrome");
+        //IF ELSE user input
+        if (choice == 1) {
+            System.out.print("Enter radius of sphere: ");
+            double radius = scanner.nextDouble();
+            double volume = calculateSphereVolume(radius);
+            System.out.println("Volume is " + String.format("%.2f", volume) + "cubic units");
+        } else if (choice == 2) {
+            System.out.print("Enter radius of cylinder: ");
+            double radius = scanner.nextDouble();
+            System.out.print("Enter height of cylinder: ");
+            double height = scanner.nextDouble();
+            double volume = calculateCylinderVolume(radius, height);
+            System.out.println("Volume is " + String.format("%.2f", volume) + "cubic units");
         } else {
-            System.out.println(input + " is not a palindrome");
-        }
-
-        scanner.close();
+            System.out.println("Invalid choice. Enter 1 or 2");
     }
+        scanner.close();
+}
 
-    //Method to check if string is palindrome
-    public static boolean isPalindrome(String str) {
-        int left = 0;
-        int right = str.length() - 1;
-
-        while (left < right) {
-            if (str.charAt(left) != str.charAt(right)) {
-                return false;
-            }
-            left++;
-            right--;
-        }
-        return true;
+//Method calculateSphereVolume
+public static double calculateSphereVolume(double radius) {
+    return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+    }
+//Method calculateCylinderVolume
+public static double calculateCylinderVolume(double radius, double height) {
+        return Math.PI * Math.pow(radius, 2) * height;
     }
 }
 
