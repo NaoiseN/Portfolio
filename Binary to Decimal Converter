@@ -1,0 +1,77 @@
+import java.util.Scanner;
+public class Question10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            //Display user menu
+            System.out.println("Binary to Decimal Converter");
+            System.out.println("1. Convert 4-bit binary to decimal");
+            System.out.println("2. Convert 8-bit binary to decimal");
+            System.out.println("3. Exit");
+            System.out.println("Enter choice: ");
+
+            int choice = scanner.nextInt();
+
+            //initialise cases
+
+            switch (choice) {
+                case 1:
+                    convert4bitbinarytodecimal();
+                    break;
+                case 2:
+                    convert8bitbinarytodecimal();
+                    break;
+                case 3:
+                    System.out.println("Exiting Converter... ");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice");
+            }
+        }
+    }
+
+    //Helper methods
+
+    private static void convert4bitbinarytodecimal() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter 4-bit binary number: ");
+        String binaryString = scanner.nextLine();
+
+        //Validate input
+        if (binaryString.length() != 4 || !binaryString.matches("[01]+")) {
+           System.out.println("Invalid input");
+           return;
+        }
+
+        int decimalValue = 0;
+        for (int i = 0; i < binaryString.length(); i++) {
+            int bitValue = Character.getNumericValue(binaryString.charAt(i));
+            //Calculate decimal value
+            decimalValue += bitValue * Math.pow(2, 3 - i);
+        }
+
+        System.out.println("Decimal equivalent: " + decimalValue);
+    }
+
+    private static void convert8bitbinarytodecimal() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an 8-bit binary number: ");
+        String binaryString = scanner.nextLine();
+
+        //Validate input
+        if (binaryString.length() != 8 || !binaryString.matches("[01+]")) {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        int decimalValue = 0;
+        for (int i = 0; i < binaryString.length(); i++) {
+            int bitValue = Character.getNumericValue(binaryString.charAt(i));
+            //Decimal value
+            decimalValue += bitValue * Math.pow(2, 7 - i);
+        }
+        System.out.println("Decimal equilvalent: " + decimalValue);
+    }
+}
