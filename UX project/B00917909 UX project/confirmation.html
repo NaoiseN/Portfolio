@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="C:\Users\Naois\Documents\CV\UX\assets\main.css">
+  <title>Confirmation</title>
+
+</head>
+<body>
+  <header>
+    <img id="logo" src="C:\Users\Naois\Documents\CV\UX\assets\logo2.png" alt="Logo">
+    <h1>Ulster University</h1>
+  </header>
+
+<main class="mx-auto">
+  <section>
+    <h2 class="text-center">Confirmation Details</h2>
+    <form id="confirmationForm">
+      <label for="currentDate">Current Date</label>
+      <input type="text" id="currentDate" name="currentDate" readonly>
+
+      <label for="signature">Electronic Signature</label>
+      <input type="text" id="signature" name="signature" placeholder="Enter your electronic signature">
+
+      <div class="row mt-3">
+        <div class="col text-center">
+        <button type="button" class="btn btn-success" onclick="submitApplication()">Submit</button>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Populate current date
+  document.getElementById('currentDate').value = new Date().toLocaleDateString();
+</script>
+<script>
+  // Populate current date
+  document.getElementById('currentDate').value = new Date().toLocaleDateString();
+
+  function submitApplication() {
+    alert("Application has been submitted!");
+  }
+</script>
+
+<footer>
+  <p>&copy; 2023 UU Prior Approval Form. All rights reserved.</p>
+</footer>
+</body>
+</html>

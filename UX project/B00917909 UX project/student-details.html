@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="C:\Users\Naois\Documents\CV\UX\assets\main.css">
+  <title>Student Details</title>
+</head>
+<body>
+
+  <header>
+    <img id="logo" src="C:\Users\Naois\Documents\CV\UX\assets\logo2.png" alt="Logo">
+    <h1>Ulster University Prior Approval Form</h1>
+  </header>
+
+<div class="container mt-5">
+  <h2 class="text-center">Student Details</h2>
+  <form id="studentDetailsForm" action="bank-details.html">
+
+    <main>
+    <div class="form-group">
+      <label for="paNumber">PA Number</label>
+      <input type="number" class="form-control" id="paNumber" placeholder="Enter PA number (5 digits)" min="10000" max="99999" required>
+    </div>
+
+    <div class="form-group">
+      <label for="studentNumber">Student Number</label>
+      <input type="text" class="form-control" id="studentNumber" placeholder="Enter student number (e.g., B00917909)" pattern="B\d{8}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input type="text" class="form-control" id="fullName" placeholder="Enter full name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="school">School</label>
+      <input type="text" class="form-control" id="school" placeholder="Enter school" required>
+    </div>
+
+    <div class="form-group">
+      <label for="faculty">Faculty</label>
+      <input type="text" class="form-control" id="faculty" placeholder="Enter faculty" required>
+    </div>
+
+    <div class="form-group">
+      <label for="campus">Campus</label>
+      <select class="form-control" id="campus" required>
+        <option value="Derry">Derry/Londonderry</option>
+        <option value="Belfast">Belfast</option>
+        <option value="Coleraine">Coleraine</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="purpose">Purpose of Visit/Course</label>
+      <input type="text" class="form-control" id="purpose" placeholder="Enter purpose of visit/course" required>
+    </div>
+
+    <div class="form-group">
+      <label for="duration">Duration of Visit</label>
+      <label+ for="from">Start:</label>
+      <input type="date" class="form-control" id="start" placeholder="Select start date" required>
+      <label+ for="from">End:</label>
+      <input type="date" class="form-control" id="end" placeholder="Select end date" required>
+    </div>
+  </form>
+
+  <div class="row mt-3">
+    <div class="col text-center">
+      <button type="submit" class="btn btn-primary">Next: Bank Details</button>
+  </form>
+    </div>
+  </div>
+
+</main>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $(function () {
+        $("#duration").datepicker({
+          numberOfMonths: 12,
+          showButtonPanel: true
+        });
+      });
+    </script>
+
+  </form>
+</div>
+<footer>
+  <p>&copy; 2023 UU Prior Approval Form. All rights reserved.</p>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

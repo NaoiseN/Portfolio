@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="C:\Users\Naois\Documents\CV\UX\assets\main.css">
+  <title>Estimated Costs</title>
+</head>
+<body>
+  <header>
+    <img id="logo" src="C:\Users\Naois\Documents\CV\UX\assets\logo2.png" alt="Logo" class="img-fluid">
+    <h1>Ulster University Prior Approval Form</h1>
+  </header>
+  <div class="container mt-5">
+      <h2 class="text-center">Estimated Costs</h2>
+      <form id="estimatedCostsForm">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Expense</th>
+            <th>Cost (£)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Course Fee</td>
+            <td><input type="number" class="form-control" name="courseFee" placeholder="Enter cost"></td>
+          </tr>
+          <tr>
+            <td>Accommodation</td>
+            <td><input type="number" class="form-control" name="accommodation" placeholder="Maximum £120 per night"></td>
+          </tr>
+          <tr>
+            <td>Subsistence</td>
+            <td><input type="number" class="form-control" name="subsistence" placeholder="Maximum £25 per day"></td>
+          </tr>
+          <tr>
+            <td>Coach/Taxi Fares</td>
+            <td><input type="number" class="form-control" name="coachTaxiFares" placeholder="Enter cost"></td>
+          </tr>
+          <tr>
+            <td>Rail Travel</td>
+            <td><input type="number" class="form-control" name="railTravel" placeholder="Enter cost" step="0.01"></td>
+          </tr>
+          <tr>
+            <td>Air Travel</td>
+            <td><input type="number" class="form-control" name="airTravel" placeholder="Enter cost" step="0.01"></td>
+          </tr>
+          <tr>
+            <td>Boat Travel</td>
+            <td><input type="number" class="form-control" name="boatTravel" placeholder="Enter cost" step="0.01"></td>
+          </tr>
+          <tr>
+            <td>Nominal Code</td>
+            <td>
+              <select class="form-control" name="nominalCode">
+                <option value="80100">80100</option>
+                <option value="80200">80200</option>
+                <option value="80300">80300</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Cost Code</td>
+            <td>
+              <select class="form-control" name="costCode">
+                <option value="T1020">T1020</option>
+                <option value="T1022">T1022</option>
+                <option value="T1022.5">T1022.5</option>
+                <option value="T1022.7">T1022.7</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  
+
+    <div class="form-group">
+      <label for="totalCost">Total Cost (£)</label>
+      <input type="text" class="form-control" id="totalCost" readonly>
+    </div>
+
+    <div class="row">
+      <div class="col text-center">
+        <button type="button" class="btn btn-primary" onclick="calculateTotal()">Calculate Total</button>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col text-center">
+        <a href="bank-details.html" class="btn btn-secondary">Back to Bank Details</a>
+      </div>
+      <div class="col text-center">
+        <a href="confirmation.html" class="btn btn-success">Next to Confirmation</a>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+  <p>&copy; 2023 UU Prior Approval Form. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  function calculateTotal() {
+    var courseFee = parseFloat(document.getElementsByName('courseFee')[0].value) || 0;
+    var accommodation = parseFloat(document.getElementsByName('accommodation')[0].value) || 0;
+    var subsistence = parseFloat(document.getElementsByName('subsistence')[0].value) || 0;
+    var coachTaxiFares = parseFloat(document.getElementsByName('coachTaxiFares')[0].value) || 0;
+    var railTravel = parseFloat(document.getElementsByName('railTravel')[0].value) || 0;
+    var airTravel = parseFloat(document.getElementsByName('airTravel')[0].value) || 0;
+    var boatTravel = parseFloat(document.getElementsByName('boatTravel')[0].value) || 0;
+
+    var totalCost = courseFee + accommodation + subsistence + coachTaxiFares + railTravel + airTravel + boatTravel;
+
+    document.getElementById('totalCost').value = totalCost.toFixed(2);
+  }
+</script>
+
+</body>
+</html>
