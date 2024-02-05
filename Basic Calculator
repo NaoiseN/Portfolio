@@ -1,0 +1,94 @@
+import java.util.Scanner;
+public class Question8 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        //Display menu
+        do {
+            System.out.println("Calculator Application");
+            System.out.println("1. Add");
+            System.out.println("2. Subtract");
+            System.out.println("3. Multiply");
+            System.out.println("4. Divide");
+            System.out.println("Enter your choice: ");
+
+            //Obtain user input
+            choice = scanner.nextInt();
+
+            //Case menu
+
+            switch (choice) {
+                case 1:
+                    Addition();
+                    break;
+                case 2:
+                    Subtraction();
+                    break;
+                case 3:
+                    Multiplication();
+                    break;
+                case 4:
+                    Division();
+                    break;
+                case 5:
+                    System.out.println("Exiting Calculator");
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+            }
+        } while (choice != 5);
+
+        scanner.close();
+    }
+
+   //Method for Addition
+    private static void Addition() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
+        double result = num1 + num2;
+        System.out.println("Result: " + result);
+    }
+
+    //Method for Subtraction
+    private static void Subtraction() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
+        double result = num1 - num2;
+        System.out.println("Result: " + result);
+    }
+
+    //Method for Multiplication
+    private static void Multiplication() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
+        double result = num1 * num2;
+        System.out.println("Result: " + result);
+    }
+
+
+    //Method for Division
+    private static void Division() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter numerator: ");
+        double num1 = scanner.nextDouble();
+        System.out.print("Enter denominator: ");
+        double num2 = scanner.nextDouble();
+
+        if (num1 == 0){
+            System.out.println("Error: Division by 0");
+        } else {
+            double result = num1 / num2;
+            System.out.println("Result: " + result);
+        }
+    }
+}
