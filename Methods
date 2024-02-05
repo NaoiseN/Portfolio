@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Question5 {
+    public static void main(String[] args) {
+
+        //Initialise Scanner`
+        Scanner scanner = new Scanner(System.in);
+
+        //Ask user for input of A
+        System.out.print("Enter value of A: ");
+        double a = scanner.nextDouble();
+
+        //Ask user for input of B
+        System.out.print("Enter value of B: ");
+        double b = scanner.nextDouble();
+
+        //initialise sum, difference, product, quotient
+        double sum = add(a, b);
+        double difference = subtract(a, b);
+        double product = multiply(a, b);
+        double quotient = divide(a, b);
+
+        //Print results
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + difference);
+        System.out.println("Product: " + product);
+        System.out.println("Quotient: " + quotient);
+
+        scanner.close();
+
+    }
+
+    public static double add(double a, double b) {
+        return a+b;
+    }
+
+    public static double subtract(double a, double b) {
+        return a - b;
+    }
+
+    public static double multiply(double a, double b) {
+        return a * b;
+    }
+
+    public static double divide(double a, double b) {
+        if (b != 0) {
+            return a / b;
+        } else {
+            System.out.println("Error. Division by zero");
+            return Double.NaN;
+        }
+    }
+}
+
