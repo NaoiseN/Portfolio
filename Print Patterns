@@ -1,0 +1,69 @@
+import java.util.Scanner;
+public class Question7 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //Print user menu
+        System.out.println("Pattern Printer");
+        System.out.println("1. Square");
+        System.out.println("2. Right-Handed Triangle");
+        System.out.println("3. Pyramid");
+        System.out.println("Enter your choice");
+        int choice = scanner.nextInt();
+
+        System.out.print("Enter number of rows: ");
+        int numRow = scanner.nextInt();
+
+        //Print choice
+
+        switch (choice) {
+            case 1:
+                printSquarePattern(numRow);
+                break;
+            case 2:
+                printRightHandedTriangle(numRow);
+                break;
+            case 3:
+                printPyramid(numRow);
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+
+        scanner.close();
+    }
+
+    //Method to print Square pattern
+    public static void printSquarePattern(int numRow) {
+        for (int i = 1; i <= numRow; i++) {
+            for (int j = 1; j <= numRow; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    //Method to print Right-Handed Triangle
+    public static void printRightHandedTriangle(int numRow) {
+        for (int i = 1; i <= numRow; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    //Method to print Pyramid Pattern
+    public static void printPyramid(int numRow) {
+        for (int i = 1; i <= numRow; i++) {
+            for (int j = 1; j <= numRow - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i + 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
