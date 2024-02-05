@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Question7 {
+    public static void main(String[] args) {
+
+        //Create two instances of person class
+        Person person1 = new Person("Alice", 30);
+        Person person2 = new Person("Bob", 25);
+
+        //Call the introduce method
+        person1.introduce();
+        person2.introduce();
+
+        //Create new instance of person class with user input
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter age: ");
+        int age = scanner.nextInt();
+
+        Person person3 = new Person(name, age);
+
+        //Call the introduce method
+
+        person3.introduce();
+
+        scanner.close();
+
+    }
+}
+
+//Person class
+class Person {
+    String name;
+    int age;
+
+    //Initialise constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+
+    }
+    // Introduce method
+    void introduce() {
+        System.out.println("Hello, my name is " + name + " and I am " + age +  " years old.");
+    }
+
+}
