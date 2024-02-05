@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Question6 {
+    public static void main(String[] args) {
+
+        //Initialise Scanner
+        Scanner scanner = new Scanner(System.in);
+
+        //User Enters name
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+
+        //Display name
+        System.out.println("Hello, " + name);
+
+        //Length of name
+        int length = name.length();
+        System.out.println("Length: " + length);
+
+        //Uppercase version of name
+        String uppercaseName = name.toUpperCase();
+        System.out.println("Uppercase: " + uppercaseName);
+
+        //Lowercase version of name
+        String lowercaseName = name.toLowerCase();
+        System.out.println("Lowercase: " + lowercaseName);
+
+        //Reverse the name
+        StringBuilder reverseName = new StringBuilder(name);
+        reverseName.reverse();
+        System.out.println("Reverse: " + reverseName.toString());
+
+        //Check if name contains '@'
+        boolean containsAt = name.contains("@");
+        System.out.println("Contains '@': " + containsAt);
+
+        //close scanner
+        scanner.close();
+
+    }
+}
