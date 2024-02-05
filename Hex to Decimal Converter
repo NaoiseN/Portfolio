@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Question10 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //Get user input of hexadecimal
+        System.out.println("Enter a hexadecimal number; ");
+        String hexNumber = scanner.nextLine();
+
+        //convert to decimal and print results
+        int decimalValue = convertHexToDecimal(hexNumber);
+        System.out.println("Decimal value: " + decimalValue);
+
+        scanner.close();
+    }
+
+    //Method to convert hexadecimal to decimal
+    public static int convertHexToDecimal(String hexNumber) {
+
+        //Initiate hexadecimal symbols and corresponding values
+        String hexSymbols = "0123456789ABCDEF";
+        int[] decimalValues = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+
+        //Reverse input hexadecimal number, process from most significant bit to less significant
+        hexNumber = new StringBuilder(hexNumber).reverse().toString();
+
+        int decimalRes = 0;
+        for(int i = 0; i < hexNumber.length(); i++) {
+            char hexChar = hexNumber.charAt(i);
+            int decimalValue = decimalValues[hexSymbols.indexOf(hexChar)];
+            decimalRes += decimalValue * Math.pow(16, i);
+        }
+        return decimalRes;
+    }
+}
