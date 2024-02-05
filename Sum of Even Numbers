@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Question1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //Get user input
+        System.out.print("Enter a positive integer");
+        int num = scanner.nextInt();
+
+        // IF not positive integer, ELSE print sum of even numbers
+        if (num <= 0) {
+            System.out.println("Enter a positive integer");
+        } else {
+            int sum = calculateSumOfEvenNumbers(num);
+            System.out.println("Sum of even numbers between 1 and " + num + " is: " + sum);
+        }
+        //close scanner
+        scanner.close();
+    }
+    // method calculateSumOfEvenNumbers
+    private static int calculateSumOfEvenNumbers(int num) {
+        int sum = 0;
+        for (int i = 2; i <= num; i += 2) {
+            sum += i;
+        }
+        return sum;
+    }
+}
