@@ -1,0 +1,58 @@
+import java.util.Scanner;
+public class Question9 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //User inputs phrase to be translated
+        System.out.print("Enter a phrase: ");
+        String phrase = scanner.nextLine();
+
+        //Print pig latin version
+        String pigLatinPhrase = convertToPigLatin(phrase);
+        System.out.println("Pig Latin: " + pigLatinPhrase);
+
+        scanner.close();
+    }
+
+    //Method to convert phrase into pig latin
+    public static String convertToPigLatin(String phrase) {
+        String[] words =phrase.split(" ");
+        StringBuilder pigLatinPhrase = new StringBuilder();
+
+        //IF ELSE statements to convert into pig latin
+        for (String word : words) {
+            if (startsWithVowel(word)) { //Starts with vowel, add -ay
+                pigLatinPhrase.append(word).append("-ay");
+            } else { //starts with consonant, find index of first vowel
+                int firstVowelIndex = findFirstVowelIndex(word);
+                if (firstVowelIndex > 0) { //move consonant cluster to end, add -ay
+                    String pigLatinWord = word.substring(firstVowelIndex) + "-" + word.substring(0, firstVowelIndex) + "ay";
+                    pigLatinPhrase.append(pigLatinWord).append(" ");
+                } else { //no vowels, treat like it starts with vowel
+                    pigLatinPhrase.append(word).append("-ay ");
+                }
+            }
+        }
+
+        return pigLatinPhrase.toString().trim();
+    }
+
+    //Method for starts with vowel
+    public static boolean startsWithVowel(String word) {
+        String lowerWord = word.toLowerCase();
+        return lowerWord.startsWith("a") || lowerWord.startsWith("e") || lowerWord.startsWith("i") || lowerWord.startsWith("o") || lowerWord.startsWith("u");
+    }
+
+    //Method to find first vowel
+    public static int findFirstVowelIndex(String word) {
+        String lowerWord = word.toLowerCase();
+        for (int i = 0; i < word.length(); i++) {
+            char c = lowerWord.charAt(i);
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                return i;
+            }
+        }
+        return -1; //no vowels found
+    }
+}
